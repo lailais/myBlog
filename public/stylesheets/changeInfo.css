@@ -1,0 +1,25 @@
+#changeWarp{
+    width: 500px;
+    margin: 0 auto;
+    background: rgba(150,84,85,.1);
+}
+#changeWarp>#preHead{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin: 0 auto;
+}
+#changeWarp>form{
+    width: 100%;
+    margin-top:50px;
+}
+#changeWarp>form>p>input{
+    width: 70%;
+    height: 25px;
+    margin: 10px;
+}
+#changeWarp>form>p:last-child>input{
+    width: 50%;
+    display: block;
+    margin: 0 auto;
+}

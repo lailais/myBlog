@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+    <% include ../headerCss.ejs%>
+    <% include sideCss.ejs%>
+    <link rel="stylesheet" href="/stylesheets/article/index.css">
+    <script src="/javascripts/jquery.min.js"></script>
+    <script src="/javascripts/articleIndex.js"></script>
+</head>
+<body>
+<% include ../header.ejs %>
+<div id="articleWarp">
+    <div id="articleLeft">
+        <ul class="con">
+
+        </ul>
+        <ul class="btn">
+                <li>首页</li>
+                <li>上一页</li>
+                <% for(let i=1;i<=Math.ceil(count/5);i++){ %>
+                    <li><%= i %></li>
+              <%  } %>
+                <li>下一页</li>
+                <li>尾页</li>
+        </ul>
+
+    </div>
+
+    <% include articleSide.ejs %>
+
+</div>
+</body>
+</html>
