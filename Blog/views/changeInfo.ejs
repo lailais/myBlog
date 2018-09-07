@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+    <% include headerCss.ejs%>
+    <link rel="stylesheet" href="/stylesheets/changeInfo.css">
+</head>
+<body>
+<% include header.ejs %>
+<div id="changeWarp">
+    <div>当前账号：<%= userInfo.name%></div>
+    <div>账号名不允许修改！</div>
+    <% if(userInfo.headPic){ %>
+    <div style="background: url('<%= userInfo.headPic%>' );background-size: cover" id="preHead"></div>
+    <% }else{ %>
+    <div style="background: url('/images/head.jpg' );background-size: cover" id="preHead"></div>
+    <% } %>
+    <form action="/users/changeInfo" method="post" enctype="multipart/form-data">
+    <p>修改密码<input type="password" name="password"></p>
+    <p>点击修改头像<input type="file" name="picFile"></p>
+    <p><input type="submit"></p>
+</form>
+</div>
+</body>
+</html>

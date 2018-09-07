@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+    <% include ../headerCss.ejs%>
+    <% include sideCss.ejs%>
+    <link rel="stylesheet" href="/stylesheets/article/articleModel.css">
+    <script src="/javascripts/jquery.min.js"></script>
+
+</head>
+<body>
+<% include ../header.ejs %>
+
+<div id="articleWarp">
+    <div id="articleLeft">
+        <div class="title"><%= article.title %></div>
+        <div class="time"><%= article.time %></div>
+        <div class="about"><%= article.about %></div>
+        <div id="articleLead"></div>
+        <a href="/article"><-返回</a>
+    </div>
+    <% include articleSide.ejs %>
+</div>
+
+</body>
+<script>
+    window.onload=function () {
+        $("#articleLead").load('<%= article.filePath%>')
+console.log('aaa')
+    }
+</script>
+</html>
+

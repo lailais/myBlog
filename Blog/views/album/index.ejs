@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+      <% include ../headerCss.ejs%>
+      <link rel='stylesheet' href='/stylesheets/album/index.css' />
+  </head>
+  <body>
+  <% include ../header.ejs %>
+  <div id="box">
+      <div id="center">
+          <%dirArr.forEach((i)=>{ %>
+              <a href="/album/img/<%= i%>"><p><%= i%></p></a>
+         <% })%>
+      </div>
+  </div>
+  </body>
+</html>

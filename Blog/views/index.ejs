@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+      <% include headerCss.ejs%>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+  </head>
+  <body>
+  <% include header.ejs %>
+    <div id="index-article">
+      <ul class="newArticle">
+       <% article.forEach((i)=>{ %>
+        <a href="/article/<%= i.tx%>"><li><%= i.title%> <span><%= i.time%></span></li></a>
+        <% }) %>
+      </ul>
+      <a href="/article"><span>更多博文-></span></a>
+    </div>
+
+
+    <div id="index-photo">
+      <ul class="newPic">
+        <a href="/album/index">
+          <li><img src="/photo/1/1.jpg" alt=""></li>
+          <li><img src="/photo/2/4.jpg" alt=""></li>
+          <li><img src="/photo/3/7.jpg" alt=""></li>
+        </a>
+      </ul>
+      <a href="/album/index"><span>更多相片-></span></a>
+    </div>
+
+
+    <div id="index-say">
+      <a href="/say">
+        <ul class="newSay">
+            <% comment.forEach((i)=>{ %>
+          <li><%= i.msg%> <span><%= i.time%></span></li>
+            <% }) %>
+        </ul>
+      </a>
+      <a href="/say"> <span>更多留言-></span> </a>
+    </div>
+
+
+  </body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+    <% include headerCss.ejs%>
+    <link rel="stylesheet" href="/stylesheets/say.css">
+    <script src="/javascripts/say.js"></script>
+    <script src="/javascripts/jquery.min.js"></script>
+</head>
+<body>
+<% include header.ejs %>
+<!--判断是否为登陆状态-->
+<% if(userInfo){ %>   <!--若userInfo存在即用户已登陆-->
+<div id="box">
+<form action="/say" method="post" >
+    <p><textarea name="msg" id="" cols="100" rows="10" placeholder="请输入您的留言"></textarea></p>
+    <p><input type="submit" value="发表留言"></p> <h4>内容不允许为空！</h4>
+</form>
+</div>
+<% }else{ %>  <!--否则未登录-->
+<div id="box">
+    <form action="#">
+        <textarea name="msg" cols="100" rows="10" placeholder="请点击页面右上角进行登陆！"></textarea>
+        <input type="button" value="发表留言">
+    </form>
+</div>
+<% } %>
+
+<!--页码按钮-->
+<div id="commentAll"></div>
+    <ul id="paging">
+        <li>首页</li>
+        <li>上一页</li>
+      <% for(let i=1;i<=Math.ceil(count/5 );i++){%>
+          <li><%= i%></li>
+     <% } %>
+        <li>下一页</li>
+        <li>尾页</li>
+    </ul>
+</body>
+</html>
